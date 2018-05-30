@@ -59,7 +59,7 @@ node {
 	      	  rc1 = bat returnStatus: true, script: "${toolbelt}/sfdx force:user:permset:assign --targetusername ${SFDC_USERNAME} --permsetname DreamHouse"
                   rc2 = bat returnStatus: true, script: "\"${toolbelt}\" force:source:push --targetusername ${SFDC_USERNAME}"
               }
-            if (rc1 != 0 $$ rc2 !=0 ) {
+            if (rc1 != 0 && rc2 !=0 ) {
                 error 'push failed'
             }
             
