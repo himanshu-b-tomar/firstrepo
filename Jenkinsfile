@@ -13,6 +13,7 @@ node {
     println 'KEY IS' 
     println JWT_KEY_CRED_ID
     def toolbelt = tool 'toolbelt'
+    def SFDC_USERNAME="test-xinwxqxywonr@example.com"
 
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
@@ -28,8 +29,6 @@ node {
             }
             if (rc != 0) { error 'hub org authorization failed' }
 
-            // need to pull out assigned username
-            SFDC_USERNAME=test-xinwxqxywonr@example.com
             
             
         }
